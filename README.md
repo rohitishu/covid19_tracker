@@ -18,7 +18,7 @@ mongod
 Then in another terminal:
 
 # Clone this repository
-git clone 
+git clone https://github.com/rohitishu/covid19_tracker.git
 # Go into the repository
 cd covid19_tracker
 # Install dependencies and run the app
