@@ -1,0 +1,44 @@
+<%- include('partials/header'); -%>
+<div class="container">
+<header class="jumbotron">
+    <div class="container">
+    <h1>Pateint Details </h1>
+    <p>
+        Always remember without Mask and not cleaning your hands is calling covid at your home so please follow the WHO guidelines
+    </p>
+</div>
+</header>
+     <center>
+      <table width="auto" height="auto" class="table table-border table-hover">
+      <tr>
+        <th scope="col" style="text-align:center">Name</th>
+        <th scope="col" style="text-align:center">Age</th>
+        <th scope="col" style="text-align:center">State</th>
+        <th scope="col" style="text-align:center">City</th>
+        <th scope="col" style="text-align:center">Options</th>
+        <th scope="col" style="text-align:center">Remove</th>
+      </tr>
+    <% report.forEach(function(reports){ %>
+        <div> 
+           <tr>
+                    <td style="text-align:center"><%=reports.name %></td>
+                    <td style="text-align:center"> <%=reports.age %></td>
+                    <td style="text-align:center"><%=reports.state %></td>
+                    <td style="text-align:center"> <%=reports.city %></td>
+                    <td style="text-align:center">
+                      <a href="/report/<%=reports._id%>/edit">Edit</a>
+                    </td>
+                    <td style="text-align:center">
+                      <form action="/report/<%=reports._id%>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger"> Delete </button>
+                      </form>
+                    </td>
+            </tr>
+                  </div>
+            
+                  <% })  %>
+                </table>
+              </center>
+</div>   
+
+  <%- include('partials/footer'); -%>

@@ -1,0 +1,41 @@
+<%- include('partials/header'); -%>
+<div class="container">
+
+<header class="jumbotron">
+    <div class="container">
+        <h1>Country Wise Covid19 Details</h1>
+</div>
+</header>
+<center>
+    <table width="auto" height="auto" class="table table-border table-hover">
+     <tr>
+       <th scope="col" style="text-align:center"> Country Name</th>
+       <th scope="col" style="text-align:center">New Confirmed Cases</th>
+       <th scope="col" style="text-align:center">Total Confirmed Cases</th>
+       <th scope="col" style="text-align:center">New Deaths</th>
+       <th scope="col" style="text-align:center">Total Deaths</th>
+       <th scope="col" style="text-align:center">New Recovered</th>
+       <th scope="col" style="text-align:center">Total Recovered</th>
+       <th scope="col" style="text-align:center">Date</th>
+     </tr>
+     <% data["Countries"].forEach(function(d) { %>
+       <div> 
+          <tr>
+                   <td style="text-align:center"><%= d["Country"] %></td>
+                   <td style="text-align:center"> <%= d["NewConfirmed"] %></td>
+                   <td style="text-align:center"> <%= d["TotalConfirmed"] %></td>
+                   <td style="text-align:center"><%= d["NewDeaths"] %></td>
+                   <td style="text-align:center"><%= d["TotalDeaths"] %></td>
+                   <td style="text-align:center"> <%= d["NewRecovered"] %></td>
+                   <td style="text-align:center"> <%= d["TotalRecovered"] %></td>
+                   <td style="text-align:center">  <%= d["Date"] %></td>
+                   
+           </tr>
+                 </div>
+           
+                 <% })  %>
+               </table>
+             </center>
+            </div>
+<%- include('partials/footer'); -%>
+
